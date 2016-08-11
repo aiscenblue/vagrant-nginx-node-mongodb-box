@@ -34,7 +34,15 @@ server {
 		try_files $uri $uri/ =404;
 		# Uncomment to enable naxsi on this location
 		# include /etc/nginx/naxsi.rules
-		root /var/www;
+	}
+
+	location /public {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+		# Uncomment to enable naxsi on this location
+		# include /etc/nginx/naxsi.rules
+		root /var/www/;
 	}
 
 	# Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests

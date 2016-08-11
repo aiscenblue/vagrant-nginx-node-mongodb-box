@@ -67,6 +67,13 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   # config.vm.provision "shell", inline: <<-SHELL
     config.vm.provision :shell, :path => "vm_provision/provision-nginx.sh"
+    config.vm.provision :shell, :path => "vm_provision/provision-mongodb.sh"
+    config.vm.provision :shell, :path => "vm_provision/provision-nodejs.sh"
+  # Add provisions start here:
+  # provision for sailsjs framework
+  # config.vm.provision :shell, :path => "vm_provision/provision-sailsjs.sh"
+  # Add provisions end here:
+    config.vm.provision :shell, :path => "vm_provision/provision-nginx-restart.sh"
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL

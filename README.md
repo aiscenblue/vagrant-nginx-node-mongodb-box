@@ -11,3 +11,5 @@ vagrant build for node,mongo,sailsjs environment
 `stop: sudo vagrant suspend`
 
 `restart: sudo vagrant reload --provision`
+
+*run at: http://localhost:8080/*

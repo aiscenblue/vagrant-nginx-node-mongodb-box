@@ -72,6 +72,8 @@ Vagrant.configure("2") do |config|
   # Add provisions start here:
   # provision for sailsjs framework
   # config.vm.provision :shell, :path => "vm_provision/provision-sailsjs.sh"
+  # provision for meteor framework
+  # config.vm.provision :shell, :path => "vm_provision/provision-meteorjs.sh"
   # Add provisions end here:
     config.vm.provision :shell, :path => "vm_provision/provision-nginx-restart.sh"
   #   apt-get update

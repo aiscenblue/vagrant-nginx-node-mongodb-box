@@ -20,7 +20,7 @@
 
 server {
 	listen 80 default_server;
-	listen [::]:80 default_server ipv6only=on;
+	#listen [::]:80 default_server ipv6only=on;
 
 	root /usr/share/nginx/html;
 	index index.html index.htm;
@@ -34,15 +34,6 @@ server {
 		try_files $uri $uri/ =404;
 		# Uncomment to enable naxsi on this location
 		# include /etc/nginx/naxsi.rules
-	}
-
-	location /public {
-		# First attempt to serve request as file, then
-		# as directory, then fall back to displaying a 404.
-		try_files $uri $uri/ =404;
-		# Uncomment to enable naxsi on this location
-		# include /etc/nginx/naxsi.rules
-		root /var/www/;
 	}
 
 	# Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests

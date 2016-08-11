@@ -11,6 +11,10 @@ echo "----- Provision: Setup /var/www to point to /vagrant ..."
 rm -rf /var/www
 ln -fs /vagrant/www /var/
 
+echo "----- Provision: replace default configuration to default file"
+rm -rf /etc/nginx/sites-available/default
+ln -fs /vagrant/sites-available/
+
 #install nodejs v6.x
 echo "----- Provision: Installing nodejs v6.x ..."
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -38,6 +42,10 @@ sudo apt-get install -y mongodb-org
 #Run MongoDB Community Edition
 echo "----- Provision: starting mongo service"
 sudo service mongod start
+
+#install sailsjs
+echo "----- Provision: Installing sailsjs globally"
+sudo npm install sails -g
 
 echo "----- Provision: Restarting nginx service"
 sudo service nginx start

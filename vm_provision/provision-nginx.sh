@@ -12,6 +12,6 @@ rm -rf /var/www
 ln -fs /vagrant/www /var/
 
 echo "----- Provision: replace default configuration to default file"
-rm -rf /etc/nginx/sites-available/default
-ln -fs /vagrant/sites-available/
+rm -rf /etc/nginx/sites-available/
+ln -fs /vagrant/sites-available/ /etc/nginx/sites-available/
 
